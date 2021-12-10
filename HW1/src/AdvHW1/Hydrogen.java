@@ -12,12 +12,15 @@ public class Hydrogen implements Runnable {
     }
 
     public void run() {
-        try {
-            System.out.println("O");
-            cyclicBarrier.await();
-        } catch (InterruptedException | BrokenBarrierException e) {
-            e.printStackTrace();
-        }
-    }
+        for (int i = 0; i < 100; i++) {
 
+            try {
+                System.out.println("H");
+                cyclicBarrier.await();
+            } catch (InterruptedException | BrokenBarrierException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
 }
